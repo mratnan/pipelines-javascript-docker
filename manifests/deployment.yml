@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mratnanpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mratnanpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: mratnanpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: mratnanpipelinesjavascriptdocker 
+          image: mr2containeracr.azurecr.io/mratnanpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
